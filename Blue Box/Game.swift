@@ -11,7 +11,6 @@ import Foundation
 class Game: BoxSystem {
     var name: String
     var genre: String
-    var publisher: String
     var year: Int
     var consoles: [String]
     var out: Bool
@@ -35,10 +34,9 @@ class Game: BoxSystem {
         }
         return t && !out
     }
-    init(Name: String, Genre: String, Publisher: String, YearOfRelease: Int, Consoles: [String]) {
+    init(Name: String, Genre: String, YearOfRelease: Int, Consoles: [String]) {
         self.name = Name
         self.genre = Genre
-        self.publisher = Publisher
         self.year = YearOfRelease
         self.out = false
         self.consoles = Consoles

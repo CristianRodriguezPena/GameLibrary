@@ -19,14 +19,6 @@ func clearScreen(lines: Int) {
         }
     }
 }
-func lstring(l: [String]) -> String {
-    var out = ""
-    for i in l {
-        out += i + (i == l.last ? "" : ", ")
-    }
-    return out
-}
-
 func box(Lenth: Int, by: String) -> String{
     var out = ""
     for _ in 1...Lenth {
@@ -66,7 +58,7 @@ class BoxSystem {
     var checkedOut = [Game]()
     let formatter = DateFormatter()
     func mainMenu() {
-        formatter.dateFormat = "dd-MM-yyyy - HH:mm:ss"
+        formatter.dateFormat = "MM-dd-yyyy 'at' HH:mm:ss"
         formatter.timeZone = TimeZone(secondsFromGMT: 39600)
         var holder = ""
         repeat {
@@ -106,16 +98,16 @@ class BoxSystem {
         }
     }
     func defaultGames() {
-        checkedIn.append(Game(Name: "Super Mario Odyssey", Genre: "Platformer", Publisher: "Nintendo", YearOfRelease: 2017, Consoles: ["Nintendo Switch"]))
-        checkedIn.append(Game(Name: "Forza Motorsport 7", Genre: "Racing", Publisher: "Microsoft Studios", YearOfRelease: 2017, Consoles: ["Xbox One"]))
-        checkedIn.append(Game(Name: "Breath of the Wild", Genre: "Action-Adventure", Publisher: "Nintendo", YearOfRelease: 2017, Consoles: ["Nintendo Switch","Wii U"]))
-        checkedIn.append(Game(Name: "Horizon Zero Dawn", Genre: "Action", Publisher: "Sonu", YearOfRelease: 2017, Consoles: ["Playstation 4"]))
-        checkedIn.append(Game(Name: "Cuphead", Genre: "Run & Gun", Publisher: "Studio MDHR", YearOfRelease: 2017, Consoles: ["Xbox One"]))
-        checkedIn.append(Game(Name: "Destiny 2", Genre: "First Person Shooter", Publisher: "Activision", YearOfRelease: 2017, Consoles: ["Xbox One","Playstation 4","PC"]))
-        checkedIn.append(Game(Name: "Mario + Rabbit Kingdom Battle", Genre: "Turn-based", Publisher: "Ubisoft", YearOfRelease: 2017, Consoles: ["Nintendo Switch"]))
-        checkedIn.append(Game(Name: "Assaasins Creed: Origins", Genre: "Action-Adventure", Publisher: "Ubisoft", YearOfRelease: 2017, Consoles: ["Xbox One","Playstation 4"]))
-        checkedIn.append(Game(Name: "FIFA 18", Genre: "Sports", Publisher: "EA Sports", YearOfRelease: 2017, Consoles: ["Xbox One","Playstation 4","Xbox 360","Playstaion 3","Nintendo Switch"]))
-        checkedIn.append(Game(Name: "Call of Duty: WWII", Genre: "First-Person Shooter", Publisher: "Activition", YearOfRelease: 2017, Consoles: ["Xbox One","Playstation 4"]))
+        checkedIn.append(Game(Name: "Super Mario Odyssey", Genre: "Platformer", YearOfRelease: 2017, Consoles: ["Nintendo Switch"]))
+        checkedIn.append(Game(Name: "Forza Motorsport 7", Genre: "Racing", YearOfRelease: 2017, Consoles: ["Xbox One"]))
+        checkedIn.append(Game(Name: "Breath of the Wild", Genre: "Action-Adventure", YearOfRelease: 2017, Consoles: ["Nintendo Switch","Wii U"]))
+        checkedIn.append(Game(Name: "Horizon Zero Dawn", Genre: "Action", YearOfRelease: 2017, Consoles: ["Playstation 4"]))
+        checkedIn.append(Game(Name: "Cuphead", Genre: "Run & Gun", YearOfRelease: 2017, Consoles: ["Xbox One"]))
+        checkedIn.append(Game(Name: "Destiny 2", Genre: "First Person Shooter", YearOfRelease: 2017, Consoles: ["Xbox One","Playstation 4","PC"]))
+        checkedIn.append(Game(Name: "Mario + Rabbit Kingdom Battle", Genre: "Turn-based", YearOfRelease: 2017, Consoles: ["Nintendo Switch"]))
+        checkedIn.append(Game(Name: "Assaasins Creed: Origins", Genre: "Action-Adventure", YearOfRelease: 2017, Consoles: ["Xbox One","Playstation 4"]))
+        checkedIn.append(Game(Name: "FIFA 18", Genre: "Sports", YearOfRelease: 2017, Consoles: ["Xbox One","Playstation 4","Xbox 360","Playstaion 3","Nintendo Switch"]))
+        checkedIn.append(Game(Name: "Call of Duty: WWII", Genre: "First-Person Shooter", YearOfRelease: 2017, Consoles: ["Xbox One","Playstation 4"]))
     }
     func universalList(l: [Game]) {
         var out = [String]()
@@ -150,7 +142,7 @@ class BoxSystem {
     func addGame() {
         var responses = [""]
         var consoles = [""]
-        let questions = ["What is the Name of the game??", "What Genre of the game??", "Who is the Publisher of the Game??", "What Year was the game made??", "What console support the game??"]
+        let questions = ["What is the Name of the game??", "What Genre of the game??", "What Year was the game made??", "What console support the game??"]
         for i in 0...questions.count - 1 {
             print("")
             print(questions[i])
@@ -165,7 +157,7 @@ class BoxSystem {
                 consoles.removeLast()
             }
         }
-        checkedIn.append(Game(Name: responses[1], Genre: responses[2], Publisher: responses[3], YearOfRelease: Int(responses[4])!, Consoles: consoles))
+        checkedIn.append(Game(Name: responses[1], Genre: responses[2], YearOfRelease: Int(responses[3])!, Consoles: consoles))
         print("Thanks for adding \(checkedIn.last!.name)")
         wait(s: 1)
         mainMenu()
@@ -202,7 +194,7 @@ class BoxSystem {
         var holder = ""
         repeat {
             universalList(l: checkedIn)
-            print(mid(t: ["Which Game would you like to check out ??"]))
+            print(mid(t: ["Which Game number would you like to check out ??"]))
             clearScreen(lines: 2)
             holder = readLine()!
         } while Int(holder) == nil
@@ -212,7 +204,7 @@ class BoxSystem {
             if readLine()!.lowercased().contains("yes") {
                 if !checkedIn[Int(holder)!].check(t: true) {
                     clearScreen(lines: 5)
-                    print(mid(t: ["\(checkedIn[Int(holder)!].name) has been Checked out, it is due back before \(formatter.string(from: Date(timeIntervalSinceReferenceDate: checkedIn[Int(holder)! - 1].dueDate.timeIntervalSinceReferenceDate + 150 + 18000) ))"]))
+                    print(mid(t: ["\(checkedIn[Int(holder)!].name) has been Checked out, it is due back before \(formatter.string(from: Date(timeIntervalSinceReferenceDate: checkedIn[Int(holder)!].dueDate.timeIntervalSinceReferenceDate + 150 + 18000) ))"]))
                     checkedOut.append(checkedIn[Int(holder)!])
                     checkedIn.remove(at: Int(holder)!)
                 clearScreen(lines: 2)
@@ -234,7 +226,7 @@ class BoxSystem {
         }
         repeat {
             universalList(l: checkedOut)
-            print(mid(t: ["Which Game would you like to check in ??"]))
+            print(mid(t: ["Which Game number would you like to check in ??"]))
             clearScreen(lines: 2)
             holder = readLine()!
         } while Int(holder) == nil
@@ -242,6 +234,7 @@ class BoxSystem {
         clearScreen(lines: 5)
             if (0...checkedOut.count).contains(Int(holder)!) {
                 print(mid(t: ["\(checkedOut[Int(holder)!].name) has been checked back in :)"]))
+                clearScreen(lines: 2)
                 checkedOut[Int(holder)!].out = false
                 checkedIn.insert(checkedOut[Int(holder)!], at: Int(holder)!)
                 checkedOut.remove(at: Int(holder)!)
