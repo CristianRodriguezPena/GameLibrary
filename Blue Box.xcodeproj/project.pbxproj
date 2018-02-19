@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A4196D43203911AF00CAA5DF /* BoxSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4196D42203911AF00CAA5DF /* BoxSystem.swift */; };
 		A496FEF7202DFFC300340C26 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A496FEF6202DFFC300340C26 /* main.swift */; };
-		A4D446DE203392CD00F596DC /* Controls System.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D446DD203392CD00F596DC /* Controls System.swift */; };
 		A4D446E0203392D400F596DC /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D446DF203392D400F596DC /* Game.swift */; };
+		A4DBF8FA203628D50057B357 /* StringManipulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DBF8F9203628D50057B357 /* StringManipulation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,10 +26,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A4196D42203911AF00CAA5DF /* BoxSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxSystem.swift; sourceTree = "<group>"; };
 		A496FEF3202DFFC300340C26 /* Blue Box */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Blue Box"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A496FEF6202DFFC300340C26 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		A4D446DD203392CD00F596DC /* Controls System.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Controls System.swift"; sourceTree = "<group>"; };
 		A4D446DF203392D400F596DC /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		A4DBF8F9203628D50057B357 /* StringManipulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringManipulation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				A496FEF6202DFFC300340C26 /* main.swift */,
-				A4D446DD203392CD00F596DC /* Controls System.swift */,
+				A4DBF8F9203628D50057B357 /* StringManipulation.swift */,
+				A4196D42203911AF00CAA5DF /* BoxSystem.swift */,
 				A4D446DF203392D400F596DC /* Game.swift */,
 			);
 			path = "Blue Box";
@@ -126,9 +129,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4196D43203911AF00CAA5DF /* BoxSystem.swift in Sources */,
 				A4D446E0203392D400F596DC /* Game.swift in Sources */,
-				A4D446DE203392CD00F596DC /* Controls System.swift in Sources */,
 				A496FEF7202DFFC300340C26 /* main.swift in Sources */,
+				A4DBF8FA203628D50057B357 /* StringManipulation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

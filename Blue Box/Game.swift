@@ -1,5 +1,5 @@
 //
-//  Unit.swift
+//  Game.swift
 //  Blue Box
 //
 //  Created by Cristian Rodriguez on 2/9/18.
@@ -11,35 +11,39 @@ import Foundation
 class Game: BoxSystem {
     var name: String
     var genre: String
-    var year: Int
+    var year: String
     var consoles: [String]
-    var out: Bool
-    var dueDate = Date()
-    func check(t: Bool) -> Bool {
-        if t {
-            if !out {
-                dueDate = Date()
-                out = true
-            }
-        } else {
-            if out {
-                out = false
-                if Date().timeIntervalSinceNow - dueDate.timeIntervalSinceNow > 150 {
-                    for _ in 1...20 {
-                        print(mid(t: ["THE GAME WAS LATE!!!!"]))
-                        wait(s: 0.1)
-                    }
-                }
-            }
+    var out = false
+    var outDate = Date()
+    var dueDate = Date(timeIntervalSinceReferenceDate: Date().timeIntervalSinceReferenceDate * 100)
+    var addedBy : String
+    let id : String
+    var checkedOutBy = ""
+
+    func checkOut() -> Bool {
+        if !out {
+            outDate = Date()
+            dueDate = Date(timeIntervalSinceReferenceDate: outDate.timeIntervalSinceReferenceDate + 150)
+            out = true
         }
-        return t && !out
+        return out
     }
-    init(Name: String, Genre: String, YearOfRelease: Int, Consoles: [String]) {
-        self.name = Name
-        self.genre = Genre
-        self.year = YearOfRelease
-        self.out = false
-        self.consoles = Consoles
+    
+    func checkIn() -> Bool {
+        if out {
+            out = false
+            dueDate = Date(timeIntervalSinceReferenceDate: Date().timeIntervalSinceReferenceDate * 100)
+        }
+        return !out
+    }
+    
+    init(name: String, genre: String, yearOfRelease: String, consoles: [String], addedBy: String, id: Int) {
+        self.name = name
+        self.genre = genre
+        self.year = yearOfRelease
+        self.consoles = consoles
+        self.addedBy = addedBy
+        self.id = String(id)
     }
 }
 

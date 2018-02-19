@@ -2,4 +2,54 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Blue Box/BoxSystem.swift"
+            timestampString = "540708737.081175"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "279"
+            endingLineNumber = "279"
+            landmarkName = "checkOutGame()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Blue_Box.BoxSystem.checkOutGame() -&gt; ()"
+                  moduleName = "Blue Box"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cristianrodriguez/Desktop/Projects/Blue%20Box/Blue%20Box/BoxSystem.swift"
+                  timestampString = "540706997.79563"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "279"
+                  endingLineNumber = "279"
+                  offsetFromSymbolStart = "1897">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Blue_Box.Game) -&gt; Swift.String in Blue_Box.BoxSystem.checkOutGame() -&gt; ()"
+                  moduleName = "Blue Box"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cristianrodriguez/Desktop/Projects/Blue%20Box/Blue%20Box/BoxSystem.swift"
+                  timestampString = "540706997.799371"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "279"
+                  endingLineNumber = "279"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

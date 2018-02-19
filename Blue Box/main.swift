@@ -8,5 +8,11 @@
 
 import Foundation
 
-Launch()
+let system = BoxSystem()
+system.launch()
 
+//36
+
+let streets = ["Adams", "Bryant", "Channing", "Douglas", "Evarts"]
+let streetsSlice = streets[2 ..< streets.endIndex]
+print(streetsSlice)
