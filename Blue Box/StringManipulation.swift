@@ -17,6 +17,7 @@ func addSpace(lines: Int) {
         }
     }
 }
+
 func repeatedPrint(length: Int, by: String) -> String{
     var out = ""
     while out.count <= length {
