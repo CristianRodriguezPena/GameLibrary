@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8064A29D203B5DB300B98587 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8064A29C203B5DB300B98587 /* GameManager.swift */; };
-		8064A29F203B60EC00B98587 /* Rentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8064A29E203B60EC00B98587 /* Rentable.swift */; };
 		A4196D43203911AF00CAA5DF /* BoxSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4196D42203911AF00CAA5DF /* BoxSystem.swift */; };
 		A496FEF7202DFFC300340C26 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A496FEF6202DFFC300340C26 /* main.swift */; };
 		A4D446E0203392D400F596DC /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D446DF203392D400F596DC /* Game.swift */; };
@@ -28,8 +26,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8064A29C203B5DB300B98587 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
-		8064A29E203B60EC00B98587 /* Rentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rentable.swift; sourceTree = "<group>"; };
 		A4196D42203911AF00CAA5DF /* BoxSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxSystem.swift; sourceTree = "<group>"; };
 		A496FEF3202DFFC300340C26 /* Blue Box */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Blue Box"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A496FEF6202DFFC300340C26 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -71,8 +67,6 @@
 				A4DBF8F9203628D50057B357 /* StringManipulation.swift */,
 				A4196D42203911AF00CAA5DF /* BoxSystem.swift */,
 				A4D446DF203392D400F596DC /* Game.swift */,
-				8064A29C203B5DB300B98587 /* GameManager.swift */,
-				8064A29E203B60EC00B98587 /* Rentable.swift */,
 			);
 			path = "Blue Box";
 			sourceTree = "<group>";
@@ -136,11 +130,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4196D43203911AF00CAA5DF /* BoxSystem.swift in Sources */,
-				8064A29F203B60EC00B98587 /* Rentable.swift in Sources */,
 				A4D446E0203392D400F596DC /* Game.swift in Sources */,
 				A496FEF7202DFFC300340C26 /* main.swift in Sources */,
 				A4DBF8FA203628D50057B357 /* StringManipulation.swift in Sources */,
-				8064A29D203B5DB300B98587 /* GameManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

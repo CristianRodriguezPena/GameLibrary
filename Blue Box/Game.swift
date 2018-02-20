@@ -8,66 +8,42 @@
 
 import Foundation
 
-class Game: BoxSystem, Rentable {
-    let name: String
-    let genre: String
-    let year: Int
-    let consoles: [String]
-    let addedBy: String
-    
-    // Check out properties
-    var isCheckedOut: Bool { return checkedOut != nil }
-    var checkedOut: Date? {
-        didSet {
-            guard let checkedOut = checkedOut else {
-                self.due = nil
-                return
-            }
-            self.due = Date(timeIntervalSinceReferenceDate: checkedOut.timeIntervalSinceReferenceDate + 150)
-        }
-    }
-    var due: Date?
-    var late: Bool? {
-        guard let due = due else { return nil }
-        return Date() > due
-    }
+class Game: BoxSystem {
+    var name: String
+    var genre: String
+    var year: String
+    var consoles: [String]
+    var out = false
+    var outDate = Date()
+    var dueDate = Date(timeIntervalSinceReferenceDate: Date().timeIntervalSinceReferenceDate * 100)
+    var addedBy : String
+    let id : String
+    var checkedOutBy = ""
 
-    // MARK: Functions
-    
-    func checkOut() throws {
-        guard checkedOut == nil else {
-            throw RentableError.alreadyCheckedOut
+    func checkOut() -> Bool {
+        if !out {
+            outDate = Date()
+            dueDate = Date(timeIntervalSinceReferenceDate: outDate.timeIntervalSinceReferenceDate + 150)
+            out = true
         }
-        
-        self.checkedOut = Date()
+        return out
     }
     
-    func checkIn() throws {
-        guard checkedOut != nil else {
-            throw RentableError.notCheckedOut
+    func checkIn() -> Bool {
+        if out {
+            out = false
+            dueDate = Date(timeIntervalSinceReferenceDate: Date().timeIntervalSinceReferenceDate * 100)
         }
-        
-        self.checkedOut = nil
+        return !out
     }
     
-    init(name: String, genre: String, yearOfRelease: Int, consoles: [String], addedBy: String) {
+    init(name: String, genre: String, yearOfRelease: String, consoles: [String], addedBy: String, id: Int) {
         self.name = name
         self.genre = genre
         self.year = yearOfRelease
         self.consoles = consoles
         self.addedBy = addedBy
-        self.checkedOut = nil
-        self.due = nil
-    }
-    
-    init(name: String, genre: String, yearOfRelease: Int, consoles: [String], addedBy: String, checkedOut: Date?, due: Date?) {
-        self.name = name
-        self.genre = genre
-        self.year = yearOfRelease
-        self.consoles = consoles
-        self.addedBy = addedBy
-        self.checkedOut = checkedOut
-        self.due = due
+        self.id = String(id)
     }
 }
 
